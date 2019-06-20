@@ -67,7 +67,7 @@ class PostEntity extends Entity
      **/
     public function getPicture()
     {
-        return ((string)$this->picture);
+        return ((string)'../../assets/img/'.$this->picture);
     }
 /**
      *  contenu
@@ -83,7 +83,7 @@ class PostEntity extends Entity
      **/
     public function getSize()
     {
-        return ((float)$this->size);
+        return ((string)$this->size);
     }
 /**
      *  contenu

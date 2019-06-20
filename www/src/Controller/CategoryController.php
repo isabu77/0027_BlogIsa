@@ -27,7 +27,7 @@ class CategoryController extends Controller
         // $this->post contient une instance de la classe PostTable
         $paginatedQuery = new PaginatedQueryController(
             $this->category,
-            $this->generateUrl('categories')
+            $this->generateUrl('categories'), 10
         );
         $categories = $paginatedQuery->getItems();
 
