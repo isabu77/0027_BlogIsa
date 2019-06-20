@@ -1,23 +1,27 @@
 <article class="col-10 mb-2 d-flex align-items-stretch">
     <div class="figure">
-    <a class="card-link " href="{{ post.url }}"><img src="assets/img/{{ post.picture }}" alt="{{ post.name }}">.</a>
+    <a class="card-link " href="{{ post.url }}"><img src="/assets/img/{{ post.picture }}" alt="{{ post.name }}">.</a>
        
     </div>
     <div class="corps">
-            <h2 class="titre"><span>{{ post.name }}</span></h2>
+            <h2><span>{{ post.name }}</span></h2>
             <p>Nom scientifique : {{ post.scientific }}</p>
             <P>{{ post.getExcerpt(200) | raw }}</P>
             <p>Taille : {{ post.size | raw }}</p>
-            <a class="card-link " href="{{ post.url }}">lire plus...</a>
-            <p>Habitat :</p>
-            <div class="card col-8 ">
-            <ul class="list-group list-group-flush ">
-                {% for category in post.getCategories() %}
-                <li class="list-group-item bg-light">
-                    <a href={{category.url}}>{{ category.getName() }}</a>
-                </li>
-                {% endfor %}
-            </ul>
+            <div class="row">
+                <div class="col-12">
+                    <ul>
+                        <li class="mylist">Habitat :</li>
+                        {% for category in post.getCategories() %}
+                        <li class="mylist">
+                            <a href={{category.url}}>{{ category.getName() }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        <div class="lireplus">
+            <span><a href="{{ post.url }}">lire plus...</a></span>
         </div>
     </div>
 </article>

@@ -67,7 +67,7 @@ class PostEntity extends Entity
      **/
     public function getPicture()
     {
-        return ((string)'../../assets/img/'.$this->picture);
+        return ((string)$this->picture);
     }
 /**
      *  contenu

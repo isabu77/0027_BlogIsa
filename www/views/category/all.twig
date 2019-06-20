@@ -1,7 +1,7 @@
 {% extends "layout/default.twig" %}
 
 {% block content %}
-    <h1 class="titre">{% block title %}{{title}}{% endblock %}</h1>
+    <h1>{% block title %}{{title}}{% endblock %}</h1>
     <ul class="list-group list-group-flush ">
         {% for category in categories %}
         <li class="list-group-item bg-light"><a href="{{ category.url }}">{{ category.name }}</a></li>

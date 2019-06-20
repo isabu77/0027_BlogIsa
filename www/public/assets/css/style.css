@@ -20,7 +20,10 @@ body section h2 {
     box-sizing: border-box;
     background-color: #eee;
     width: 80%;
-    margin: 50px auto;
+    margin-top: 50px;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -28,6 +31,13 @@ body section h2 {
 
 
 /* un article sur la page d'accueil */
+
+.lireplus {
+    margin: auto;
+    text-align: center;
+    line-height: 25px;
+    font-size: large;
+}
 
 article {
     box-sizing: border-box;
@@ -39,14 +49,17 @@ article {
     justify-content: space-between;
 }
 
-article a {
-    text-decoration: none;
-    color: black;
-}
-
 article .corps {
     padding: 10px;
     width: 70%;
+}
+
+.mylist {
+    display: inline;
+    min-width: 100px;
+    height: 30px;
+    padding: 10px;
+    margin: 2px;
 }
 
 article .figure {
@@ -102,16 +115,25 @@ article p {
     border-radius: 5px;
 }
 
-.article-container h3 {
+.article-container span {
+    font-size: 1.5em;
     color: green;
 }
 
 .article-container p {
-    text-align: left;
+    text-align: justify;
 }
 
 
 /* div commentaire */
+
+.detail button {
+    height: 40px;
+}
+
+#id1 {
+    font-size: 0.5em;
+}
 
 .footer {
     display: flex;
@@ -130,6 +152,11 @@ article p {
     border-style: none;
     background-color: rgb(199, 193, 193);
     outline: none;
+}
+
+h2 {
+    font-size: 3.5vw;
+    font-weight: bold;
 }
 
 
