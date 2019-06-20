@@ -1,6 +1,29 @@
-
 {% extends "layout/default.twig" %}
 
-{% block title %}{{title}}{% endblock %}
+{% block content %}
+<section class="login-container">
+    <div>
+            <h2>Contact</h2>
+        <form method="post" action="">
+            <p>
+                <label for="from">Courriel pour la réponse</label>
+                <input type="text" name="from" id="from" />
+            </p>
+            <p>
+                <label for="object">Objet</label>
+                <input type="text" name="object" id="object" />
+            </p>
+            <p>
+                <textarea name="message" id="message" rows="10" cols="60"></textarea>
+            </p>
+            <p class=bouton>
+                <input type="reset" name="reset" value="Effacer" />
+                <input type="submit" name="send" value="Envoyer" />
+            </p>
+        </form>
+    </div>
+</section>
+{% endblock %}
+
 
 

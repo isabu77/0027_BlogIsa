@@ -20,4 +20,5 @@ $app->getRouter($basepath)
     ->get('/category/[*:slug]-[i:id]', 'Category#show', 'category')
     ->get('/contact', 'contact#index', 'contact')
     ->get('/identification', 'identification#index', 'identification')
+    ->get('/inscription', 'inscription#index', 'inscription')
     ->run();

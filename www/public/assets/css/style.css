@@ -1,0 +1,155 @@
+/* PAGE ACCUEIL */
+
+body section h1,
+body section h2 {
+    text-align: left;
+}
+
+
+/* champ de recherche */
+
+.recherche {
+    align-self: center;
+    margin-right: 10px;
+}
+
+
+/* Section globale */
+
+.wrapper {
+    box-sizing: border-box;
+    background-color: #eee;
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* un article sur la page d'accueil */
+
+article {
+    box-sizing: border-box;
+    border-bottom: 1px solid #d8d8d8;
+    width: 90%;
+    margin: 20px auto;
+    display: flex!important;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+article a {
+    text-decoration: none;
+    color: black;
+}
+
+article .corps {
+    padding: 10px;
+    width: 70%;
+}
+
+article .figure {
+    width: 30%;
+}
+
+article img {
+    width: 100%;
+}
+
+article h2 {
+    height: 1em;
+    margin: 10px auto;
+}
+
+article span {
+    font-size: 1em;
+    padding: 2px;
+}
+
+article .linespan {
+    font-size: 1em;
+    margin: 10px;
+}
+
+article p {
+    font-size: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: left;
+}
+
+
+/* une page d'Article */
+
+.article-container {
+    box-sizing: border-box;
+    border-bottom: 1px solid #d8d8d8;
+    width: 90%;
+    margin: 20px auto;
+    display: flex!important;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.article-container>div {
+    width: 90%;
+    margin: 80px auto;
+    padding: 20px;
+    text-align: center;
+    background: #eee;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.article-container h3 {
+    color: green;
+}
+
+.article-container p {
+    text-align: left;
+}
+
+
+/* div commentaire */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer button {
+    border-radius: 20px;
+    outline: none;
+}
+
+.footer button:active {
+    border-radius: 20px;
+    border-style: none;
+    background-color: rgb(199, 193, 193);
+    outline: none;
+}
+
+
+/* media qui a au moins 768 px de large et seulement les ecrans*/
+
+@media only screen and (min-width: 768px) {
+    /* PAGE accueil */
+    h2 {
+        font-size: 2.5vw;
+    }
+    /* champ de recherche */
+    .recherche {
+        align-self: flex-end;
+        margin-right: 10px;
+    }
+    /* div commentaire */
+    .footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+}

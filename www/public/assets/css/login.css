@@ -1,0 +1,97 @@
+/*------------------
+   Reset
+------------------*/
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+
+/*------------------
+   Mise en page
+------------------*/
+
+
+/* media qui a au plus 767 px de large  (mobile) */
+
+@media (max-width:767px) {
+    section.login-container>div {
+        width: 70%;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+        background: #eee;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+}
+
+
+/* media qui a au moins 768 px de large */
+
+@media (min-width:768px) {
+    section.login-container>div {
+        width: 450px;
+        margin: 80px auto;
+        padding: 20px;
+        text-align: center;
+        background: #eee;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+}
+
+section.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input[type="password"],
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form button[type="submit"],
+form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 16px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: 0;
+}
+
+form input[type="password"]:focus,
+form input[type="password"]:hover,
+form input[type="text"]:focus,
+form input[type="text"]:hover,
+form input[type="email"]:focus,
+form input[type="tel"]:focus,
+form input[type="email"]:hover,
+form input[type="tel"]:hover,
+form textarea:focus,
+form textarea:hover {
+    background-color: #ccc;
+}
+
+form button[type="submit"] {
+    font-weight: bold;
+    color: #eee;
+    text-transform: uppercase;
+    background-color: #3a9232a9;
+}
+
+form button[type="submit"]:focus,
+form button[type="submit"]:hover {
+    background-color: #2db121a9;
+}
+
+.danger {
+    border: 3px solid red !important;
+}

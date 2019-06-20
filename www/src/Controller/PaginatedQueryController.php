@@ -55,7 +55,7 @@ class PaginatedQueryController
     public function __construct(
         Table $classTable,
         string $url = null,
-        int $perPage = 12
+        int $perPage = 6
     ) {
         $this->classTable = $classTable;
         $this->url = $url;

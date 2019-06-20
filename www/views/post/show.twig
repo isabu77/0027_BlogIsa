@@ -1,18 +1,35 @@
 {% extends "layout/default.twig" %}
 
-
-{% block title %}{{title}}{% endblock %}
-
 {% block content %}
-    <div class="text-muted text-center pb-5 mb-5">
-        <p><big>{{post.CreatedAt | date('d/m/Y h:i') }}</big></p>
-        {% for category in post.categories %}
-            <li class="list-group-item bg-light"><a class="card-link" href="{{category.getUrl()}}">{{ category.getName() }}</a></li>
-        {% endfor %}
-    </div>
-
-<p class="mx-4 text-justify">nl2br(htmlspecialchars({{post.getContent()}}))</p>
-
+    <section class="article-container">
+        <div>
+            <h1 class="titre">{{ post.name }}</h1>
+            <article>
+                <div class="figure">
+                    <img src="../assets/img/{{ post.picture }}" alt="{{ post.name }}">
+                </div>
+                <div class="corps">
+                    <p>{{post.getContent()}}</p>
+                    <div class="footer">
+                        <h3>Habitat</h3>
+                        {% for category in post.categories %}
+                            <li class="list-group-item bg-light"><a class="card-link" href="{{category.getUrl()}}">{{ category.getName() }}</a></li>
+                        {% endfor %}
+                    </div>
+                </div>
+            </article>
+            <div class="detail">
+                <label id="err1">Veuillez saisir votre commentaire</label>
+                <textarea id="text1" required></textarea>
+                <button id="1" onclick=comment(this)>Commenter</button>
+                <span id="id1">commentaires</span>
+            </div>
+            <div>
+                <h3>COMMENTAIRES</h3>
+                <ul id="ul1">
+                </ul>
+            </div>
+        </div>
+    </section>
 {% endblock %}
-
 

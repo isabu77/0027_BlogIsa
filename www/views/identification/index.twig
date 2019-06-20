@@ -1,6 +1,18 @@
-
 {% extends "layout/default.twig" %}
 
-{% block title %}{{title}}{% endblock %}
+{% block content %}
+<section class="login-container">
+    <div>
+            <header>
+            <h2>Identification</h2>
+        </header>
+        <form action="" method="Post">
+            <input type="text" name="username" placeholder="Nom d'utilisateur" />
+            <input type="password" name="password" placeholder="Mot de passe" />
+            <button type="submit">Connexion</button>
+        </form>
+    </div>
+</section>
+{% endblock %}
 
 

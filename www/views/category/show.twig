@@ -1,14 +1,15 @@
 {% extends "layout/default.twig" %}
 
-
-{% block title %}{{ title }}{% endblock %}
-
-
 {% block content %}
-<section class="row">
-    {% for post in posts %}
-    {% include "post/card.twig" %}
-    {% endfor %}
-</section>
-{{ paginate | raw}}
+    <h1 class="titre">{% block title %}{{title}}{% endblock %}</h1>
+        <div class="recherche">
+            <input type="text" name="" id="search_button" onchange="search()">
+            <button onclick="search()"><i class="fas fa-search"></i></button>
+        </div>
+        <section class="row">
+            {% for post in posts %}
+            {{ include('post/card.twig') }}
+            {% endfor %}
+        </section>
+        {{ paginate | raw }}
 {% endblock content %}

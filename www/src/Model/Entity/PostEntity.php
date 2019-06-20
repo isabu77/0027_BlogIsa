@@ -10,6 +10,9 @@ class PostEntity extends Entity
     private $name;
     private $slug;
     private $created_at;
+    private $picture;
+    private $scientific;
+    private $size;
     private $content;
     private $categories = [];
 
@@ -59,6 +62,30 @@ class PostEntity extends Entity
     }
 
     /**
+     *  contenu
+     *  @return string
+     **/
+    public function getPicture()
+    {
+        return ((string)$this->picture);
+    }
+/**
+     *  contenu
+     *  @return string
+     **/
+    public function getScientific()
+    {
+        return ((string)$this->scientific);
+    }
+/**
+     *  contenu
+     *  @return string
+     **/
+    public function getSize()
+    {
+        return ((float)$this->size);
+    }
+/**
      *  contenu
      *  @return string
      **/

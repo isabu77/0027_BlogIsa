@@ -31,7 +31,7 @@ class CategoryController extends Controller
         );
         $categories = $paginatedQuery->getItems();
 
-        $title = "Catégories";
+        $title = "les habitats";
 
         // affichage HTML avec category/all.twig
         $this->render('category/all', [
@@ -90,7 +90,7 @@ class CategoryController extends Controller
             exit();
         }
 
-        $title = 'Catégorie : ' . $category->getName();
+        $title = 'Habitat : ' . $category->getName();
 
         // les articles de la catégorie : ERROR !! affiche tous les articles, de toutes catégories
         // $this->post doit etre créé par loadModel dans le constructeur

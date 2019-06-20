@@ -1,0 +1,192 @@
+body {
+    background-image: url("../img/cielverger.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    /*linear-gradient(to right, rgb(97, 167, 18) 0%, rgb(75, 185, 24) 50%, rgb(97, 167, 18) 100%);*/
+    /*url("assets/img/jardin.jpg")  */
+    font: 12px/1.4em'PT Sans', Sans-Serif;
+    color: #1c1c1c;
+}
+
+header {
+    zoom: 1;
+    /* pour interent explorer 6 et 7 */
+}
+
+
+/* contenu du footer  */
+
+.top-Home {
+    padding: 5% 12% 5% 16%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+footer p {
+    color: #fff;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+footer i {
+    color: #fff;
+    font-size: 20px;
+}
+
+
+/* media qui a au plus 767 px de large  (mobile) */
+
+@media (max-width:767px) {
+    /*  titre de la page */
+    .titre {
+        text-align: center;
+        padding: 2px 2px;
+        margin: 10px auto;
+        font-size: 18px;
+        box-shadow: 10px 5px 5px green;
+        font-weight: bold;
+    }
+    /* menu Burger */
+    .menu {
+        background-color: transparent;
+        color: rgb(68, 62, 62);
+        height: 50px;
+        position: fixed;
+        top: 0;
+    }
+    .menu .burger {
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        color: inherit;
+        cursor: pointer;
+        font-size: 5vw;
+        margin: 0;
+        outline: 0;
+        padding: 5px 5px;
+        text-align: left;
+        width: 100vw;
+        top: 0;
+    }
+    .menu .burger:before {
+        content: '☰';
+    }
+    .menu .burger:checked+nav {
+        height: calc(30vh - 50px);
+        opacity: .9;
+    }
+    .menu .burger:checked:before {
+        content: 'X';
+    }
+    .menu nav {
+        background: grey;
+        font-size: 20px;
+        font-weight: 700;
+        height: 0;
+        overflow: hidden;
+        text-transform: uppercase;
+        transition: height .3s;
+        width: 100vw;
+        top: 0;
+    }
+    .menu nav>* {
+        display: block;
+        letter-spacing: 1px;
+        padding: 0 5px;
+        width: 100vw;
+        font-size: 3vw;
+    }
+    .menu nav ul {
+        list-style-type: none;
+    }
+    .menu nav ul li {
+        text-align: center;
+        padding: 1% 0;
+    }
+    .menu nav ul li a {
+        color: white;
+        text-decoration: none;
+    }
+    /* inverser la couleur sur survol en ordi (hover) et clic en mobile (focus pour le tactile)*/
+    .menu nav ul li a:hover,
+    .menu nav ul li a:focus {
+        color: white;
+        background: rgb(116, 177, 66);
+    }
+    /* footer */
+    footer {
+        background-color: #41a05e;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100vw;
+        height: 50px;
+        margin: auto;
+    }
+}
+
+
+/* media qui a au moins 768 px de large */
+
+@media (min-width:768px) {
+    /* titre de la page */
+    .titre {
+        text-align: center;
+        padding: 2px 2px;
+        margin: 20px auto;
+        font-size: 18px;
+        box-shadow: 10px 5px 5px green;
+        font-weight: bold;
+        position: relative;
+    }
+    /* menu bandeau */
+    input[type=checkbox] {
+        display: none;
+    }
+    .menu {
+        background-color: #41a05e;
+        height: 50px;
+        left: 10px;
+        right: 10px;
+        top: 0;
+        position: fixed;
+        border-radius: 20px;
+    }
+    .menu nav ul {
+        display: flex;
+        flex-direction: row;
+        align-content: space-around;
+        align-items: center;
+        height: 50px;
+    }
+    .menu nav ul li {
+        margin: 0 5%;
+        list-style-type: none;
+    }
+    .menu nav ul li a {
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-decoration: none;
+    }
+    /* inverser la couleur sur survol en ordi (hover) et clic en mobile (focus pour le tactile)*/
+    .menu nav ul li a:hover,
+    .menu nav ul li a:focus {
+        color: #1c1c1c;
+        background: #ccc;
+    }
+    /* footer */
+    footer {
+        background-color: #41a05e;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 900px;
+        height: 50px;
+        margin: auto;
+        border-radius: 20px;
+    }
+}
