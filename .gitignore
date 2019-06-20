@@ -1,0 +1,4 @@
+.env
+www/vendor
+createBlog.sql
+www/tests/Exotest/

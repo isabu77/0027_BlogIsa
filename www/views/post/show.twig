@@ -1,0 +1,18 @@
+{% extends "layout/default.twig" %}
+
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+    <div class="text-muted text-center pb-5 mb-5">
+        <p><big>{{post.CreatedAt | date('d/m/Y h:i') }}</big></p>
+        {% for category in post.categories %}
+            <li class="list-group-item bg-light"><a class="card-link" href="{{category.getUrl()}}">{{ category.getName() }}</a></li>
+        {% endfor %}
+    </div>
+
+<p class="mx-4 text-justify">nl2br(htmlspecialchars({{post.getContent()}}))</p>
+
+{% endblock %}
+
+
