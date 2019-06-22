@@ -1,10 +1,10 @@
 <?php 
-namespace App;
+namespace Core\Controller;
 
 /**
  * Classe statique de contrôle d'une Url
  */
-class URL
+class URLController
 {
 
     /**

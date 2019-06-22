@@ -1,29 +1,36 @@
 <?php
-namespace App\Controller;
+namespace Core\Controller;
 
 class Controller
 {
-
     private $app;
     private $twig;
 
+    /**
+     * Rendu d'une page en .twig
+     */
     protected function render(string $view, array $variable = [])
     {
-
         $variable['debugTime'] = $this->getApp()->getDebugTime();
         echo $this->getTwig()->render($view.'.twig', $variable);
     }
     
+    /**
+     * retourne l'instance du moteur de template Twig
+     */
     private function getTwig()
     {
         if (is_null($this->twig)){
-        // initialisation de Twig : moteur de template PHP
-        $loader = new \Twig\Loader\FilesystemLoader(dirname(dirname(__dir__)) . '/views/');
-        $this->twig = new \Twig\Environment($loader);
+            // initialisation de Twig : moteur de template PHP
+            $loader = new \Twig\Loader\FilesystemLoader(dirname(dirname(__dir__)) . '/views/');
+            $this->twig = new \Twig\Environment($loader);
         }
         return $this->twig;
     }
 
+    /**
+     * retourne l'instance de la classe App (Application)
+     */
     protected function getApp()
     {
         if (is_null($this->app)){
@@ -32,15 +39,6 @@ class Controller
         return $this->app;
     }
 
-       /**
-     * retourne le router
-     */
-    protected function getRouter()
-    {
-        return $this->getApp()->getRouter();
-    }
-
-    // correction AFORMAC
     /**
      * génère l'Url de la route pour la page routeName
      */

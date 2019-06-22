@@ -1,11 +1,12 @@
 <?php
 namespace App\Controller;
-//use App\Model\Table\CategoryTable;
+use \Core\Controller\Controller;
+use App\Controller\PaginatedQueryAppController;
 
 class CategoryController extends Controller
 {
     /**
-     * constructeur par Correction AFORMAC
+     * constructeur 
      */
     public function __construct()
     {
@@ -23,9 +24,8 @@ class CategoryController extends Controller
      */
     public function all()
     {
-        //==============================  correction AFORMAC
         // $this->post contient une instance de la classe PostTable
-        $paginatedQuery = new PaginatedQueryController(
+        $paginatedQuery = new PaginatedQueryAppController(
             $this->category,
             $this->generateUrl('categories'), 10
         );
@@ -39,33 +39,6 @@ class CategoryController extends Controller
             'paginate' => $paginatedQuery->getNavHTML(),
             'title' => $title
         ]);
-
-        //==============================  correction AFORMAC FIN
-        
-        //============================= MON CODE
-/*         
-        // lecture des catégories dans la base 
-        $paginatedController = new PaginatedController(
-            'getNbCategory',
-            'getCategories',
-            'App\Model\Table\CategoryTable',
-            $this->getRouter()->url("categories"),
-            null,
-            10
-        );
-        $categories = $paginatedController->getItems();
-        $title = "Catégories";
-
-        $this->render(
-            "category/all",
-            [
-                "title" => $title,
-                "categories" => $categories,
-                "paginate" => $paginatedController->getNavHTML()
-            ]
-        );
-*/
-        //============================= MON CODE === FIN
     }
 
     /**
@@ -73,9 +46,6 @@ class CategoryController extends Controller
      */
     public function show(string $slug, int $id)
     {
-    
-
-        //==============================  correction AFORMAC
         // méthode générique de table.php
         $category = $this->category->find($id);
 
@@ -94,18 +64,11 @@ class CategoryController extends Controller
 
         // les articles de la catégorie : ERROR !! affiche tous les articles, de toutes catégories
         // $this->post doit etre créé par loadModel dans le constructeur
-        $paginatedQuery = new PaginatedQueryController(
+        $paginatedQuery = new PaginatedQueryAppController(
             $this->post,
             $this->generateUrl('category', ["id" => $category->getId(), "slug" => $category->getSlug()])
         );
         $postById = $paginatedQuery->getItemsInId($id);
-
-        //============================= MON CODE 
-        // lecture de la catégorie id dans la base (objet Category)
-        //$categoryTable = CategoryTable::getInstance();
-        //$category = $categoryTable::getCategory($id);
-        //============================= MON CODE === FIN
-
 
         $this->render(
             "category/show",
@@ -115,39 +78,5 @@ class CategoryController extends Controller
                 "paginate" => $paginatedQuery->getNavHTML()
             ]
         );
-        //==============================  correction AFORMAC FIN
-
-        //============================= MON CODE
-        // lecture des articles de la catégorie par son id dans la base 
-/*         
-        $uri = $this->getRouter()->url("category", ["id" => $category->getId(), "slug" => $category->getSlug()]);
-        $paginatedController = new PaginatedController(
-            'getNbPost',
-            'getPosts',
-            'App\Model\Table\PostTable',
-            $uri,
-            $category->getId()
-        );
-        $posts = $paginatedController->getItems();
- */
-        /**
-         *  @var $postById
-         * Tableau d'objets Post
-         * dont la propriété  $catégories est lue dans la base
-         *  
-         */
-/*
-        $postById = $categoryTable::getCategoriesOfPosts($posts);
-
-        $this->render(
-            "category/show",
-            [
-                "title" => $title,
-                "posts" => $postById,
-                "paginate" => $paginatedController->getNavHTML()
-            ]
-        );
- */    
-        //============================= MON CODE === FIN
     }
 }

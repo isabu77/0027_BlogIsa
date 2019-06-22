@@ -1,10 +1,11 @@
 <?php
 namespace App\Model\Entity;
+use Core\Model\Entity;
 
 /**
  *  Classe Category : une catégorie du blog 
  **/
-class CategoryEntity
+class CategoryEntity extends Entity
 {
     private $id;
     private $name;

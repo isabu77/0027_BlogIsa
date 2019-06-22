@@ -1,13 +1,11 @@
 <?php
-namespace App\Controller\Database;
+namespace Core\Controller\Database;
 
 use \PDO;
-// correction AFORMAC 
 /**
- * classe DatabaseController
+ * classe générique DatabaseMysqlController
  */
-
-class DatabaseController
+class DatabaseMysqlController extends DatabaseController
 {
     private $pdo;
 
@@ -29,17 +27,14 @@ class DatabaseController
         $this->db_pass = $db_pass;
         $this->db_host = $db_host;
         $this->db_char = $db_char;
-
-
-        //if (self::$_connect == null)
-        //   self::$_connect = Connect::getInstance();
     }
 
     public function getPDO()
     {
         if (is_null($this->pdo)) {
             $pdo = new PDO(
-                "mysql:host=" . $this->db_host . ";dbname=" . $this->db_name,
+                "mysql:host=" . $this->db_host . 
+                ";dbname=" . $this->db_name,
                 $this->db_user,
                 $this->db_pass
             );

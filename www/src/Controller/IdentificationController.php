@@ -1,5 +1,7 @@
 <?php
 namespace App\Controller;
+use \Core\Controller\Controller;
+
 
 /* use App\Model\Table\CategoryTable;
 use App\Model\Table\PostTable;

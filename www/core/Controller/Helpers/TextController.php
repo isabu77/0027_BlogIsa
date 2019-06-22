@@ -1,5 +1,5 @@
 <?php
-namespace App\Helpers;
+namespace Core\Controller\Helpers;
 
 /**
  *  Classe Text   
@@ -7,7 +7,7 @@ namespace App\Helpers;
  * @access public
  * @static
  **/
-class Text
+class TextController
 {
     /**
      *  extrait du contenu

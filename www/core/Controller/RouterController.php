@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller;
+namespace Core\Controller;
 
 class RouterController
 {
@@ -44,16 +44,12 @@ class RouterController
         // dans toutes les vues qui sont incluses ci-dessous (dans le dossier views)
         $router = $this;
 
-        //ob_start(); // démarre le TAMPON
-
         if (is_array($match)) {
             if (strpos($match['target'], "#")) {
                 [$controller, $methode] = explode("#", $match['target']);
                 $controller = "App\\Controller\\".ucfirst($controller)."Controller";
-                //ob_get_clean();
-                ;
-       
-                (new $controller())->$methode(... array_values($match['params']));
+               ;
+                (new $controller())->$methode(...array_values($match['params']));
                 exit();
             }
             $params = $match['params'];	
@@ -63,8 +59,6 @@ class RouterController
             header($_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
             require $this->pathToFile("layout/404");
         }
-        //$content = ob_get_clean(); // récupère le html du cache
-        //require $this->pathToFile("layout/default");
     }
 
     /**

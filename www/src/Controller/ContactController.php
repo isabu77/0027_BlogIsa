@@ -1,10 +1,6 @@
 <?php
 namespace App\Controller;
-
-/* use App\Model\Table\CategoryTable;
-use App\Model\Table\PostTable;
-use App\Model\Entity\Category;
-use App\Model\Entity\Post; */
+use \Core\Controller\Controller;
 
 class ContactController extends Controller
 {

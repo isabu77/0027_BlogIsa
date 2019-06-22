@@ -12,9 +12,9 @@
                 <div class="col-12">
                     <ul>
                         <li class="mylist">Habitat :</li>
-                        {% for category in post.getCategories() %}
+                        {% for category in post.categories %}
                         <li class="mylist">
-                            <a href={{category.url}}>{{ category.getName() }}</a>
+                            <a href={{category.url}}>{{ category.name }}</a>
                         </li>
                         {% endfor %}
                     </ul>

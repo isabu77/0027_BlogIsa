@@ -1,9 +1,8 @@
 <?php
-namespace App\Controller;
+namespace Core\Controller;
 
-use \App\Model\Table\Table;
-use App\URL;
-//==============================  correction AFORMAC
+use \Core\Model\Table;
+use \Core\Controller\URLController;
 
 /**
  * classe PaginatedQueryController : gestion d'une pagination avec requête à la base 
@@ -55,18 +54,24 @@ class PaginatedQueryController
     public function __construct(
         Table $classTable,
         string $url = null,
-        int $perPage = 6
+        int $perPage = 12
     ) {
         $this->classTable = $classTable;
         $this->url = $url;
         $this->perPage = $perPage;
     }
 
-    private function getCurrentPage(): int
+    /**
+     * retourne la page courante 
+     */
+    protected function getCurrentPage(): int
     {
-        return URL::getPositiveInt('page', 1);
+        return URLController::getPositiveInt('page', 1);
     }
 
+    /**
+     * retourne le nb de pages
+     */
     private function getNbPages(int $id = null): float
     {
         if ($this->count === null) {
@@ -76,38 +81,21 @@ class PaginatedQueryController
     }
 
 
+    /**
+     * retourne le tableau des n° de page
+     */
     public function getNav(): array
     {
         $uri = $this->url;
         $nbPage = $this->getNbPages();
         $navArray = [];
         for ($i = 1; $i <= $nbPage; $i++) {
-            // if($i == 1){
-            //     $url = $uri;
-            // }else{
-            //     $url = $uri . "?page=" . $i;
-            // }
             $url = $i == 1 ? $uri : $uri . "?page=" . $i;
             $navArray[$i] = $url;
         }
         return $navArray;
     }
-    public function getNavHtml(): string
-    {
-        $urls = $this->getNav();
-        $html = "";
-        foreach ($urls as $key => $url) {
-            $class = $this->getCurrentPage() == $key ? " active" : "";
-            $html .= "<li class=\"page-item {$class}\"><a class=\"page-link\" href=\"{$url}\">{$key}</a></li>";
-        }
-        return <<<HTML
-        <nav class="Page navigation">
-            <ul class="pagination justify-content-center">
-                {$html}
-            </ul>
-        </nav>
-HTML;
-    }
+
     /**
      * Retourne la liste des éléments d'une page
      * par appel de la méthode de requête de la classe fournie
@@ -133,6 +121,7 @@ HTML;
         }
         return ($this->items);
     }
+    
     /**
      * Retourne la liste des éléments d'une page
      * par appel de la méthode de requête de la classe fournie

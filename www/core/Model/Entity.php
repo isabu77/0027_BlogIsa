@@ -1,5 +1,5 @@
 <?php
-namespace App\Model\Entity;
+namespace Core\Model;
 
 /**
  *  Classe Entity : un entregistrement de table

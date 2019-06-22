@@ -9,7 +9,7 @@
                     <img src="../assets/img/{{ post.picture }}" alt="{{ post.name }}">
                 </div>
                 <div class="corps">
-                    <p>{{post.getContent()}}</p>
+                    <p>nl2br(htmlspecialchars({{post.content | raw}}))</p>
                     <div class="footer">
                         <ul>
                         <li class="mylist">Habitat :</li>
