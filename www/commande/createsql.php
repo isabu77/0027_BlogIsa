@@ -66,7 +66,7 @@ $categories = [];
 $images = ['Etourneau_CL.jpg', 'MartinPecheur_GB.jpg', 'mesange.jpg', 
 'MoineauX_PRM.jpg', 'PicEpeiche_CL.jpg', 'PieBavarde_PRM.jpg', 'pinson-arbre-oiseau.jpg', 
 'RougeGorge3_PRM.jpg', 'RougeQueueFrontBlanc_PR.jpg', 'TourterelleTurque_DG.jpg'];
-$oiseaux = ["L''étourneau", 'Le Martin Pecheur', 'La mésange bleue', 
+$oiseaux = ["L''étourneau", 'Le Martin Pêcheur', 'La mésange bleue', 
                 'Le moineau domestique', 'Le pic épeiche', 'La pie bavarde', 'Le pinson', 
                 'Le rouge gorge', 'Le rouge queue', 'La tourterelle'];
 $latin = ['Sturnus vulgaris', 'Acedo atthis', 'Parus caeruleus', 
